@@ -350,31 +350,33 @@ nav{
 }
 .gallery-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-auto-rows:200px;
-  gap:8px;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(5,260px);
+  gap:12px;
   margin-top:40px;
 }
 .gallery-item{
-  overflow:hidden;border-radius:8px;
-  background:var(--card);
+  overflow:hidden;border-radius:14px;
+  background:#0d1a2e;
   cursor:pointer;
   position:relative;
+  box-shadow:0 2px 12px rgba(21,101,192,.1);
+  transition:box-shadow .3s,transform .3s;
 }
+.gallery-item:hover{box-shadow:0 8px 32px rgba(21,101,192,.22);transform:translateY(-3px);}
 .gallery-item img{
   width:100%;height:100%;object-fit:cover;
-  transition:transform .4s;
+  transition:transform .5s ease;
 }
-.gallery-item:hover img{transform:scale(1.06);}
+.gallery-item:hover img{transform:scale(1.07);}
 .gallery-item.tall{grid-row:span 2;}
 .gallery-item.wide{grid-column:span 2;}
 .gallery-overlay{
   position:absolute;inset:0;
-  background:rgba(232,93,38,.0);
-  transition:background .3s;
-  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(to top,rgba(13,36,97,.35) 0%,transparent 50%);
+  transition:opacity .3s;
 }
-.gallery-item:hover .gallery-overlay{background:rgba(232,93,38,.2);}
+.gallery-item:hover .gallery-overlay{opacity:0.6;}
 
 /* ── REVIEWS ─────────────────────────────────── */
 .reviews{
@@ -1050,48 +1052,52 @@ footer{
     <div class="section-label">Our Work</div>
     <h2 class="section-title">Built Different.<br/><span style="color:var(--accent);">Philly Proof.</span></h2>
     <div class="gallery-grid">
+      <!-- Row 1-2: tall left anchor, two normal top right, wide bottom right -->
       <div class="gallery-item tall">
         <img src="photos/IMG_8349.jpeg" alt="Mueller Mechanical HVAC installation"/>
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="photos/IMG_0040.jpeg" alt="HVAC unit installation"/>
+        <img src="photos/IMG_0040.jpeg" alt="Technician servicing furnace"/>
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="photos/IMG_5378.jpeg" alt="Heating system work"/>
+        <img src="photos/IMG_5378.jpeg" alt="Interior HVAC ductwork"/>
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item wide">
         <img src="photos/mueller-new-4.png" alt="Fujitsu rooftop installation with Philadelphia skyline"/>
         <div class="gallery-overlay"></div>
       </div>
+      <!-- Row 3: three equal -->
       <div class="gallery-item">
-        <img src="photos/IMG_4999.jpeg" alt="HVAC service in Philadelphia"/>
+        <img src="photos/IMG_5350.jpeg" alt="Coleman mini-split installation"/>
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="photos/IMG_5350.jpeg" alt="Coleman mini-split installation"/>
+        <img src="photos/IMG_4999.jpeg" alt="HVAC service Philadelphia"/>
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
         <img src="photos/IMG_8362.jpeg" alt="Mini-split installation"/>
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item">
-        <img src="photos/IMG_8144.jpg" alt="Philly HVAC work"/>
-        <div class="gallery-overlay"></div>
-      </div>
+      <!-- Row 4: wide panoramic left, tall right anchor -->
       <div class="gallery-item wide">
         <img src="photos/mueller-new-3.png" alt="HVAC work panoramic"/>
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item tall">
         <img src="photos/mueller-new-1.png" alt="Navien boiler and copper pipe installation"/>
         <div class="gallery-overlay"></div>
       </div>
+      <!-- Row 5: two normal left, tall right continues -->
       <div class="gallery-item">
-        <img src="photos/mueller-new-2.png" alt="Rooftop HVAC installation"/>
+        <img src="photos/IMG_8144.jpg" alt="Philly rooftop HVAC work"/>
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photos/mueller-new-2.png" alt="Rooftop HVAC with city view"/>
         <div class="gallery-overlay"></div>
       </div>
     </div>
