@@ -430,10 +430,15 @@ nav{
 /* ── QUOTE MODAL ─────────────────────────────── */
 .quote-overlay{
   position:fixed;inset:0;z-index:2000;
-  background:rgba(0,0,0,.75);backdrop-filter:blur(6px);
   display:flex;align-items:center;justify-content:center;
   padding:20px;
   opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.quote-overlay::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,.75);backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  z-index:0;
 }
 .quote-overlay.open{opacity:1;pointer-events:all;}
 .quote-modal{
@@ -444,6 +449,7 @@ nav{
   max-height:90vh;overflow-y:auto;
   padding:36px;
   position:relative;
+  z-index:1;
   pointer-events:auto;
   box-shadow:0 20px 60px rgba(21,101,192,.2);
 }
