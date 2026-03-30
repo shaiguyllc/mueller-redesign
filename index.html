@@ -444,7 +444,11 @@ nav{
   max-height:90vh;overflow-y:auto;
   padding:36px;
   position:relative;
+  pointer-events:auto;
   box-shadow:0 20px 60px rgba(21,101,192,.2);
+}
+.quote-modal input,.quote-modal textarea,.quote-modal select,.quote-modal button{
+  pointer-events:auto;
 }
 .quote-close{
   position:absolute;top:16px;right:16px;
@@ -1543,6 +1547,7 @@ function toggleMob(){
 function openQuote(){
   document.getElementById('quoteOverlay').classList.add('open');
   document.body.style.overflow='hidden';
+  setTimeout(()=>{ const z=document.getElementById('zipInput'); if(z) z.focus(); },150);
 }
 function closeQuote(){
   document.getElementById('quoteOverlay').classList.remove('open');
